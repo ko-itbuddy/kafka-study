@@ -1,26 +1,24 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '3.3.3'
-	id 'io.spring.dependency-management' version '1.1.6'
 }
 
 group = 'org.ibtuddy'
 version = '0.0.1-SNAPSHOT'
 
-java {
-	toolchain {
-		languageVersion = JavaLanguageVersion.of(21)
-	}
-}
 
 repositories {
 	mavenCentral()
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	// https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients
+	implementation 'org.apache.kafka:kafka-clients:3.8.0'
+	// https://mvnrepository.com/artifact/org.slf4j/slf4j-api
+	implementation 'org.slf4j:slf4j-api:2.0.16'
+	// https://mvnrepository.com/artifact/org.slf4j/slf4j-simple
+	implementation 'org.slf4j:slf4j-simple:2.0.16'
+
+
 }
 
 tasks.named('test') {
